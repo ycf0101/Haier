@@ -5,6 +5,8 @@ import com.mapper.TestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 /**
  * ${DESCRIPTION}
  *
@@ -18,7 +20,7 @@ public class TestService {
     private TestMapper mapper;
 
     public Person getPerson(String id){
-        Person person = new Person("a","张三","qq.com");
+        Person person = new Person(UUID.randomUUID().toString().replaceAll("-",""),"张三","qq.com");
         mapper.savePerson(person);
         return mapper.getPerson(id);
     }
