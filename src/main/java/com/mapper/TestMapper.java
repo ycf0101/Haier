@@ -21,4 +21,6 @@ public interface TestMapper {
 
     @Insert("insert into person values(#{id},#{name},#{address})")
     public void savePerson(Person person);
+
+    public Person queryPerson(String id);
 }

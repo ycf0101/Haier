@@ -22,7 +22,8 @@ public class TestService {
     public Person getPerson(String id){
         Person person = new Person(UUID.randomUUID().toString().replaceAll("-",""),"张三","qq.com");
         mapper.savePerson(person);
-        return mapper.getPerson(id);
+//        return mapper.getPerson(id);
+        return mapper.queryPerson(id);
     }
 
 }
